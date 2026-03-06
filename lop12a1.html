@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lớp 12A1 - Kỳ thi tốt nghiệp 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(120deg,#0f2027,#2c5364,#00c6ff);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+header{
+padding:40px 20px;
+}
+
+h1{
+font-size:48px;
+letter-spacing:2px;
+}
+
+.school{
+font-size:20px;
+margin-top:10px;
+opacity:0.9;
+}
+
+.section{
+padding:40px 20px;
+}
+
+.card{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+border-radius:20px;
+padding:30px;
+margin:20px auto;
+max-width:800px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h2{
+margin-bottom:20px;
+}
+
+.stats{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.stat{
+background:rgba(0,0,0,0.3);
+padding:20px 30px;
+border-radius:15px;
+font-size:22px;
+}
+
+.countdown{
+font-size:40px;
+font-weight:600;
+margin-top:10px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;
+max-width:900px;
+margin:auto;
+}
+
+.gallery img{
+width:100%;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.5);
+}
+
+.decor{
+font-size:50px;
+margin:20px;
+animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-10px)}
+100%{transform:translateY(0)}
+}
+
+footer{
+padding:30px;
+opacity:0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="decor">🎓</div>
+<h1>LỚP 12A1</h1>
+<div class="school">Trường THPT Số 3 Bảo Thắng</div>
+<div class="school">Niên khóa tốt nghiệp 2026</div>
+</header>
+
+<div class="section">
+<div class="card">
+<h2>Thông tin lớp</h2>
+<p>Sĩ số: <b>44 học sinh</b></p>
+<p>Giáo viên chủ nhiệm: <b>Ngô Quang Nghiệp</b></p>
+<p>Lớp trưởng: <b>Nguyễn Đức Quang Minh</b></p>
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<h2>Thành tích</h2>
+<p>🏅 1 Giải Khuyến Khích Học Sinh Giỏi Toán</p>
+<p>🏅 2 Giải Khuyến Khích Học Sinh Giỏi Văn</p>
+<p>🔬 Giải 3 Nghiên Cứu Khoa Học</p>
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<h2>Đếm ngược tới kỳ thi tốt nghiệp 2026</h2>
+<div id="countdown" class="countdown"></div>
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<h2>Khoảnh khắc của lớp</h2>
+<div class="gallery">
+<img src="https://picsum.photos/300/200?random=1">
+<img src="https://picsum.photos/300/200?random=2">
+<img src="https://picsum.photos/300/200?random=3">
+<img src="https://picsum.photos/300/200?random=4">
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<h2>Lời chúc</h2>
+<p>"Lớp 12A1 – cùng nhau cố gắng chinh phục kỳ thi tốt nghiệp 2026"</p>
+</div>
+</div>
+
+<footer>
+🎓 Chúng ta rồi sẽ tốt nghiệp – nhưng ký ức 12A1 sẽ còn mãi
+</footer>
+
+<audio autoplay loop>
+<source src="https://www.bensound.com/bensound-music/bensound-sunny.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+var examDate = new Date("June 26, 2026 00:00:00").getTime();
+
+var timer = setInterval(function(){
+
+var now = new Date().getTime();
+var distance = examDate - now;
+
+var days = Math.floor(distance / (1000*60*60*24));
+var hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+var minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+var seconds = Math.floor((distance % (1000*60)) / 1000);
+
+
+document.getElementById("countdown").innerHTML =
+ days + " ngày " + hours + " giờ " + minutes + " phút " + seconds + " giây";
+
+if(distance < 0){
+clearInterval(timer);
+document.getElementById("countdown").innerHTML = "Đã đến ngày thi!";
+}
+
+},1000);
+</script>
+
+</body>
+</html>
